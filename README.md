@@ -1,24 +1,26 @@
 # Anime Searcher 🔎
 
-A fast and responsive React application for searching and exploring anime, powered by the Jikan API (MyAnimeList). 
+**Anime Searcher** — это быстрое и отзывчивое React-приложение для поиска и исследования аниме, работающее на базе Jikan API (MyAnimeList).
 
-## 🌟 Features
+Проект демонстрирует навыки работы с внешними API, реализацию бесконечной прокрутки (Infinite Scroll) и сложную фильтрацию данных.
 
-* **Smart Search:** Find anime by title or keywords.
-* **Genre Filtering:** Filter results by genres (conveniently sorted from A to Z).
-* **Infinite Scroll:** Seamlessly load more anime as you scroll down the page.
-* **Type-Safe:** Built with TypeScript for reliable code and better developer experience.
+## 🌟 Ключевые особенности
 
-## 🛠️ Tech Stack
+- **Умный поиск:** Поиск аниме по названию или ключевым словам.
+- **Фильтрация по жанрам:** Возможность сузить поиск с помощью выбора жанров (отсортированы по алфавиту).
+- **Infinite Scroll:** Бесшовная подгрузка новых данных при прокрутке страницы с использованием Intersection Observer API.
+- **Type-Safe:** Полная типизация данных с помощью TypeScript.
+- **JSDoc Documentation:** Код снабжен профессиональными комментариями для удобства поддержки.
 
-* **Frontend:** React, TypeScript, HTML/CSS
-* **Build Tool:** Vite
-* **API:** [Jikan API v4](https://docs.api.jikan.moe/)
+## 🛠️ Технологический стек
 
-## 🚀 Getting Started
+- **Frontend:** React 19, TypeScript, HTML5/CSS3
+- **Build Tool:** Vite
+- **API:** [Jikan API v4](https://docs.api.jikan.moe/)
 
-To run this project locally, follow these steps:
+## 🚀 Начало работы
 
-1. Clone the repository:
+1. Клонируйте репозиторий:
    ```bash
    git clone [https://github.com/o-brown77/anime-searcher.git](https://github.com/o-brown77/anime-searcher.git)
+   ```

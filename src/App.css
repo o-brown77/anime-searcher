@@ -1,3 +1,7 @@
+/* =========================================
+   ОСНОВНЫЕ СТИЛИ КОМПОНЕНТА APP
+   ========================================= */
+
 #root {
   max-width: 1200px;
   margin: 0 auto;
@@ -6,6 +10,7 @@
   font-family: "Arial", sans-serif;
 }
 
+/* Контейнер поисковой строки */
 .search-box {
   margin-bottom: 2rem;
   display: flex;
@@ -13,6 +18,7 @@
   gap: 10px;
 }
 
+/* Стили для полей ввода */
 input {
   padding: 12px;
   font-size: 16px;
@@ -23,6 +29,7 @@ input {
   color: white;
 }
 
+/* Базовые кнопки */
 button {
   padding: 12px 24px;
   cursor: pointer;
@@ -38,12 +45,14 @@ button:hover {
   background-color: #535bf2;
 }
 
+/* Сетка для отображения карточек аниме */
 .anime-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 20px;
 }
 
+/* Карточка отдельного аниме */
 .anime-card {
   background: #1a1a1a;
   padding: 10px;
@@ -70,6 +79,7 @@ button:hover {
   color: #eee;
 }
 
+/* Индикатор рейтинга на карточке */
 .score {
   position: absolute;
   top: 10px;
@@ -82,6 +92,7 @@ button:hover {
   font-size: 0.9rem;
 }
 
+/* Выпадающий список выбора жанров */
 .genre-select {
   padding: 12px;
   font-size: 16px;
@@ -94,4 +105,153 @@ button:hover {
 
 .genre-select:hover {
   border-color: #646cff;
+}
+
+/* =========================================
+   SKELETON LOADING (Анимация загрузки)
+   ========================================= */
+
+/* Заглушка карточки аниме во время ожидания ответа от API */
+.skeleton-card {
+  background: #2a2b38;
+  border-radius: 8px;
+  height: 350px;
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+/* Анимация пульсации для эффекта загрузки */
+@keyframes pulse {
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+
+/* =========================================
+   MODAL WINDOW (Всплывающее окно деталей)
+   ========================================= */
+
+/* Темный полупрозрачный фон, перекрывающий остальной контент */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+/* Главный контейнер модального окна */
+.modal-content {
+  background: #1a1a24;
+  padding: 30px;
+  border-radius: 12px;
+  max-width: 800px;
+  width: 100%;
+  color: white;
+  display: flex;
+  gap: 20px;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Постер внутри модального окна */
+.modal-content img {
+  max-width: 250px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+/* Блок с текстовой информацией (описание, рейтинг, год) */
+.modal-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.modal-info h2 {
+  margin: 0;
+  color: #fff;
+}
+
+/* Скролл для длинного описания сюжета */
+.modal-info p {
+  line-height: 1.5;
+  color: #ccc;
+  overflow-y: auto;
+  max-height: 200px;
+}
+
+/* Кнопка закрытия модального окна (Крестик) */
+.close-modal-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: #ff4757;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* =========================================
+   FAVORITES (Кнопки избранного)
+   ========================================= */
+
+/* Кнопка лайка поверх карточки аниме */
+.favorite-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.6);
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.2s;
+}
+
+.favorite-btn:hover {
+  transform: scale(1.1);
+}
+
+/* Контейнер шапки для разделения заголовка и кнопки "Показать Избранное" */
+.header-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* Главная кнопка переключения между режимами Поиск/Избранное */
+.toggle-fav-btn {
+  background: #ff4757;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
 }
